@@ -1,0 +1,41 @@
+backend:
+  name: github
+  repo: alhijabcenter6-spec/al-hijab-center
+  branch: main
+
+media_folder: /images
+public_folder: /images
+
+collections:
+  - name: products
+    label: Products
+    files:
+      - name: product_list
+        label: Product List
+        file: data/products.json
+        format: json
+        fields:
+          - name: products
+            label: Products
+            label_singular: Product
+            widget: list
+            fields:
+              - name: name
+                label: Product Name
+                widget: string
+
+              - name: price
+                label: Price
+                widget: number
+
+              - name: description
+                label: Description
+                widget: text
+
+              - name: category
+                label: Category
+                widget: string
+
+              - name: image
+                label: Product Image
+                widget: image
